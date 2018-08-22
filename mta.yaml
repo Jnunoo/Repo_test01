@@ -1,0 +1,20 @@
+ID: Source_Control_Git
+_schema-version: '2.0'
+description: Testing Git Function
+version: 0.0.1
+
+modules:
+ - name: FI_personal
+   type: hdb
+   path: FI_personal
+   requires:
+    - name: hdi_FI_personal
+
+resources:
+ - name: hdi_FI_personal
+   parameters:
+      config:
+         schema: Finace
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
